@@ -51,7 +51,7 @@ The development server will be running at `http://localhost:5173`. You can now v
 The design for this project is provided in Figma. To implement it:
 
 1. **Access the Design:**
-   - Get the Figma design file from the [provided link](#https://www.figma.com/design/QogmRqrj6iyCGj15lB0xfb/Untitled?node-id=0-1&t=rj2vv8uLHGUdUJMZ-1) (make sure you have the link to the Figma file).
+   - Get the Figma design file from the [Figmalink](https://www.figma.com/design/QogmRqrj6iyCGj15lB0xfb/Untitled?node-id=0-1&t=rj2vv8uLHGUdUJMZ-1)  
 2. **Analyze the Design:**
    - Break down the design into reusable components such as `Header`, `Footer`, `Button`, `Card`, etc.
    - Identify global styles and themes (like colors, fonts, and spacings) that can be applied throughout the project.
@@ -73,7 +73,7 @@ The design for this project is provided in Figma. To implement it:
 Following a structured and organized folder layout is crucial for scaling the project and keeping it maintainable. Below is a recommended folder structure for a Vite + React project.
 
 ```plaintext
-hacktoberfest-2024/
+/
 ├── public/                     # Public assets (favicons, images)
 ├── src/                        # Main source code
 │   ├── assets/                 # Images, icons, fonts, etc.
