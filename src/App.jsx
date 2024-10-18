@@ -1,19 +1,20 @@
-import './App.css'
-import AboutUs from './components/Aboutus'
-import Goals from './components/Goals'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Landingpage from './pages/Landingpage';
+import Navbar from './pages/Navbar';
+import Repopage from './pages/Repopage'; 
 
 function App() {
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <Header />
-      <AboutUs />
-      <Goals />
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<Landingpage />} />
+        <Route path="/repo" element={<Repopage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
