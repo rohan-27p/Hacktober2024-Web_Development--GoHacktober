@@ -4,14 +4,16 @@ import './App.css';
 import Landingpage from './pages/Landingpage';
 import Navbar from './pages/Navbar';
 import Repopage from './pages/Repopage'; 
+import Dashboardpage from './pages/Dashboardpage';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/repo" element={<Repopage />} />
+        <Route path="/dashboard" element={<Dashboardpage></Dashboardpage>} />
       </Routes>
     </Router>
   );

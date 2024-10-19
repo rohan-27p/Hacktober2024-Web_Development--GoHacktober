@@ -4,9 +4,12 @@ import Cp from "../assets/Cp.png";
 import Ml from "../assets/Ml.png";
 import Homelogo from "../assets/Homelogo.png";
 import WebDev from "../assets/WebDev.png";
+import Navbar from './Navbar';
 
 const Repopage = () => {
   return (
+    <div>
+      <Navbar></Navbar>
     <div className="flex flex-col items-center justify-center h-screen p-4">
       <h1 className="text-4xl font-bold mb-10 uppercase">REPOSITORIES</h1> 
       <div className="flex space-x-4">
@@ -31,6 +34,7 @@ const Repopage = () => {
         </div>
       </div>
       <img src={Homelogo} alt="Homepage Logo" className="mt-10 max-w-full h-auto max-h-[400px]" />
+    </div>
     </div>
   );
 }

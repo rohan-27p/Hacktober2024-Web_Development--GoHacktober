@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Homelogo from '../assets/Homelogo.png';
+import Navbar from './Navbar';
 
 const Landingpage = () => {
   return (
+    <div>
+      <Navbar></Navbar>
     <div className="flex flex-col items-center justify-center h-screen bg-white text-center p-4 mt-[-10]"> {/* Adjusted margin-top here */}
+     
       <h1 className="font-bold text-3xl md:text-4xl mb-2">
         Together, let's push the boundaries 
       </h1>
@@ -17,6 +21,7 @@ const Landingpage = () => {
         </button>
       </Link>
       <img src={Homelogo} alt="Home Logo" className="max-w-full h-auto max-h-[300px] md:max-h-[400px]" />
+    </div>
     </div>
   );
 }
