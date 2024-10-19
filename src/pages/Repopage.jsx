@@ -12,11 +12,13 @@ const Repopage = () => {
         Repositories
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-screen-lg">
+        <a href="https://github.com/acmjec/Hacktoberfest_2024-Android_Plant_Detection" target="_blank" rel="noopener noreferrer">
         <div className="flex flex-col items-center bg-gray-200 p-4 rounded-lg shadow-md w-full h-32 sm:h-40">
           <img src={Andriod} alt="Android" className="h-12 sm:h-16 mb-2" />
           <span className="text-lg font-semibold">Android</span>
         </div>
-
+        </a>
+        <a href="https://github.com/acmjec/Hacktober2024-Web_Development--GoHacktober"  target="_blank" rel="noopener noreferrer">
         <div className="flex flex-col items-center bg-gray-200 p-4 rounded-lg shadow-md w-full h-32 sm:h-40">
           <img
             src={WebDev}
@@ -25,12 +27,14 @@ const Repopage = () => {
           />
           <span className="text-lg font-semibold">Web Dev</span>
         </div>
-
+        </a>
+        <a href="https://github.com/acmjec/AI_ML_HacktoberFest_2024"  target="_blank" rel="noopener noreferrer">
         <div className="flex flex-col items-center bg-gray-200 p-4 rounded-lg shadow-md w-full h-32 sm:h-40">
           <img src={Ml} alt="Machine Learning" className="h-12 sm:h-16 mb-2" />
           <span className="text-lg font-semibold">ML</span>
         </div>
-
+        </a>
+        <a href="https://github.com/acmjec/CompetitiveCoding_Hacktoberfest2024"  target="_blank" rel="noopener noreferrer">
         <div className="flex flex-col items-center bg-gray-200 p-4 rounded-lg shadow-md w-full h-32 sm:h-40">
           <img
             src={Cp}
@@ -39,6 +43,7 @@ const Repopage = () => {
           />
           <span className="text-lg font-semibold">CP</span>
         </div>
+        </a>
       </div>
 
       {/* Homepage logo */}
