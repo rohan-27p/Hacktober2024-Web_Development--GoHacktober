@@ -49,6 +49,7 @@ The development server will be running at `http://localhost:5173`. You can now v
 ## 🎨 Design Implementation Guide
 
 The design for this project is provided in Figma. To implement it:
+![image](https://github.com/user-attachments/assets/0867b9bd-e1d6-4f51-b0a3-274d7a2f3844)
 
 1. **Access the Design:**
    - Get the Figma design file from the [Figmalink](https://www.figma.com/design/QogmRqrj6iyCGj15lB0xfb/Untitled?node-id=0-1&t=rj2vv8uLHGUdUJMZ-1)  
