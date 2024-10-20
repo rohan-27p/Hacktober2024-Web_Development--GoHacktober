@@ -10,6 +10,7 @@ import Dashboardpage from './pages/Dashboardpage';
 import Dashboard from './components/Dashboard'; 
 import ProfilePage from './components/ProfilePage'; 
 import ContactPage from './pages/ContactPage';
+import AboutUs from './pages/AboutUs';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/repo" element={<Repopage />} />
         <Route path="/dashboard" element={<Dashboardpage></Dashboardpage>} />
         <Route path='/contact' element={<ContactPage></ContactPage>}/>
+        <Route path="/about" element={<AboutUs></AboutUs>}/>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
