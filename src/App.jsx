@@ -4,6 +4,7 @@ import './App.css';
 import Landingpage from './pages/Landingpage';
 import Navbar from './pages/Navbar';
 import Repopage from './pages/Repopage'; 
+import Footer from './pages/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Landingpage />} />
         <Route path="/repo" element={<Repopage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
