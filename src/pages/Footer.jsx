@@ -2,7 +2,7 @@ import React from 'react';
 import acm_logo from "../assets/acm_logo.png";
 import './Footer.css';
 
-export default function Footer(){
+export default function Footer({bg}){
 return(
     <>
     <div  className="flex justify-center items-center bg-white">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Landingpage from './pages/Landingpage';
 import Navbar from './pages/Navbar';
@@ -12,11 +12,10 @@ import ProfilePage from './components/ProfilePage';
 import ContactPage from './pages/ContactPage';
 import AboutUs from './pages/AboutUs';
 
-
 function App() {
+  console.log(window.location.pathname)
   return (
     <Router>
-      
       <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/repo" element={<Repopage />} />
