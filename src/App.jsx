@@ -4,6 +4,7 @@ import './App.css';
 import Landingpage from './pages/Landingpage';
 import Navbar from './pages/Navbar';
 import Repopage from './pages/Repopage'; 
+import Footer from './pages/Footer';
 
 import Dashboardpage from './pages/Dashboardpage';
 import Dashboard from './components/Dashboard'; 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
