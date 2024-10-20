@@ -4,12 +4,13 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import BugReportIcon from "@mui/icons-material/BugReport";
-import CodeIcon from "@mui/icons-material/Code";
+import pr from '../assets/pr.png'
+import star from '../assets/Star.png'
+import issue from '../assets/issue.png'
+import dev from '../assets/dev.png'
 import { BarChart } from "@mui/x-charts/BarChart";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
+import StatCard from "../components/StatCard";
 
 const dataset = [
   { day: "Mon", seoul: 3 },
@@ -28,32 +29,56 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   borderRadius: 10,
   width: "100%",
   [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? theme.palette.grey[800]
-        : theme.palette.grey[200],
+    backgroundColor: "#1717173d", 
   },
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 5,
-    backgroundColor: theme.palette.mode === "dark" ? "black" : "black",
+    backgroundColor: "#171717", 
   },
 }));
+
+
 
 const chartSetting = {
   yAxis: [
     {
       label: "Contributions",
-    },
+    },      
+    {
+      fill: 'white'
+    }
   ],
   series: [
     { dataKey: "seoul", label: "Contribution Activity", valueFormatter },
-  ],
-  height: 300,
+  ],  
+
+  height: 400,
   xAxis: [{ dataKey: "day", scaleType: "band", label: "Day of the Week" }],
   sx: {
     [`& .${axisClasses.directionY} .${axisClasses.label}`]: {
+        transform: "translateX(-10px)",
+        fill:"#ffffff"
+    },   
+    [`& .${axisClasses.directionX} .${axisClasses.label}`]: {
       transform: "translateX(-10px)",
+      fill:"#ffffff"
+    },   
+
+    "& .MuiChartsAxis-tickContainer .MuiChartsAxis-tickLabel":{
+        fill:"white",
     },
+    "& .css-1x2wln8-MuiChartsAxis-root-MuiChartsXAxis-root .MuiChartsAxis-line":{
+      stroke:"white"
+    },
+    "& .css-1x2wln8-MuiChartsAxis-root-MuiChartsXAxis-root .MuiChartsAxis-tickContainer line":{
+      stroke:"white" 
+    }, 
+    "& .css-175e1i1-MuiChartsAxis-root-MuiChartsYAxis-root .MuiChartsAxis-line":{
+      stroke:"white"
+    },   
+    "& .css-175e1i1-MuiChartsAxis-root-MuiChartsYAxis-root .MuiChartsAxis-tickContainer line":{
+      stroke:"white" 
+    }, 
   },
 };
 
@@ -63,6 +88,14 @@ const DashboardPage = () => {
   const [error, setError] = useState(null);
 
   // Simulated backend JSON data
+
+  useEffect(() => {
+    document.body.style.background = "linear-gradient(to bottom, #7E22CE, #5B21B6, #312E81)";
+    return () => {
+      document.body.style.background = ""; 
+    };
+  }, []);
+
   const backendData = [
     {
       contributions: { issues: null, pulls: null },
@@ -126,7 +159,7 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className=" text-white min-h-screen">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
           <h1 className="text-2xl sm:text-3xl mb-4 sm:mb-0">
@@ -135,7 +168,7 @@ const DashboardPage = () => {
           <Avatar src="/broken-image.jpg" />
         </div>
 
-        <div className="bg-gray-200 rounded-md p-4 mb-8">
+        <div className="bg-white bg-opacity-10 shadow-md rounded-md p-4 mb-8">
           <h2 className="text-xl sm:text-2xl text-center mb-4">
             Welcome back Abiral Jain
           </h2>
@@ -149,44 +182,37 @@ const DashboardPage = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {[
+        {
+          [
             {
               title: "Pull Requests",
-              icon: <GitHubIcon />,
+              icon: pr,
               value: stats.pullRequests,
             },
             {
               title: "Issues Raised",
-              icon: <BugReportIcon />,
+              icon: issue,
               value: stats.issuesRaised,
             },
             {
               title: "Stars Gained",
-              icon: <StarBorderIcon />,
+              icon: star,
               value: stats.starsGained,
             },
             {
               title: "Repos Contributed",
-              icon: <CodeIcon />,
+              icon: dev,
               value: stats.reposContributed,
-            },
-          ].map((item, index) => (
-            <div key={index} className="bg-gray-200 rounded-lg p-4 shadow-sm">
-              <div className="flex justify-between items-center mb-2">
-                <div className="text-sm sm:text-base font-semibold">
-                  {item.title}
-                </div>
-                <div>{item.icon}</div>
-              </div>
-              <div className="text-2xl sm:text-3xl text-center font-bold">
-                {item.value}
-              </div>
-            </div>
-          ))}
-        </div>
+            }
+          ].map((ele, index) => (
+            <StatCard key={index} title={ele.title} icon={ele.icon} value={ele.value} />
+          ))
+        }
+      </div>
+
 
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="w-full lg:w-1/2 bg-transparent border border-black rounded-lg p-4">
+          <div className="w-full lg:w-1/2 bg-white bg-opacity-10  text-white  shadow-md  rounded-lg p-4">
             <BarChart
               dataset={dataset}
               xAxis={[
@@ -196,16 +222,17 @@ const DashboardPage = () => {
                   tickPlacement: "middle",
                   tickLabelPlacement: "middle",
                   label: "Days of the Week",
+                  borderRadius: '10'
                 },
               ]}
               {...chartSetting}
             />
           </div>
-          <div className="w-full lg:w-1/2 bg-gray-200 rounded-lg p-4">
+          <div className="w-full lg:w-1/2 bg-white bg-opacity-10  shadow-md  rounded-lg p-4">
             <h2 className="text-lg mb-4">Repository Contributions</h2>
             <div className="space-y-2">
               {data.map((repo, index) => (
-                <div key={index} className="bg-gray-100 p-2 rounded-lg">
+                <div key={index} className="flex flex-col gap-2  bg-white bg-opacity-10 p-2 rounded-lg">
                   <h3 className="text-base font-bold">{repo.repo_name}</h3>
                   <div>
                     <strong>Issues:</strong>
