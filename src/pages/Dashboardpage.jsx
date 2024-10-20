@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
-import LinearProgress, {
-  linearProgressClasses,
-} from "@mui/material/LinearProgress";
-import { styled } from "@mui/material/styles";
 import pr from '../assets/pr.png'
 import star from '../assets/Star.png'
 import issue from '../assets/issue.png'
+import { styled } from "@mui/material/styles";
 import dev from '../assets/dev.png'
 import { BarChart } from "@mui/x-charts/BarChart";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
 import StatCard from "../components/StatCard";
+import Hero from '../components/Hero';
 
 const dataset = [
   { day: "Mon", seoul: 3 },
@@ -23,19 +21,6 @@ const dataset = [
 ];
 
 const valueFormatter = (value) => `${value} contributions`;
-
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 15,
-  borderRadius: 10,
-  width: "100%",
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: "#1717173d", 
-  },
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    backgroundColor: "#171717", 
-  },
-}));
 
 
 
@@ -168,18 +153,7 @@ const DashboardPage = () => {
           <Avatar src="/broken-image.jpg" />
         </div>
 
-        <div className="bg-white bg-opacity-10 shadow-md rounded-md p-4 mb-8">
-          <h2 className="text-xl sm:text-2xl text-center mb-4">
-            Welcome back Abiral Jain
-          </h2>
-          <div className="space-y-4">
-            <h4 className="text-sm sm:text-base">
-              Your Hacktoberfest Progress
-            </h4>
-            <BorderLinearProgress variant="determinate" value={90} />
-            <span className="block text-right text-sm">90% completed</span>
-          </div>
-        </div>
+        <Hero username={'User'} pr={3} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {
