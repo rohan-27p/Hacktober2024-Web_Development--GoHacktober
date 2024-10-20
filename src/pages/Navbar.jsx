@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
 
         {/* Center - Links */}
-        <div className="hidden md:flex flex-1 justify-center space-x-12 font-medium">
+        <div className="hidden md:flex flex-1 justify-center space-x-12 font-semibold">
           <Link
             to="/"
             className="text-gray-700 hover:text-green-500 relative pb-1 border-b-2 border-transparent hover:border-green-500 transition duration-300"
@@ -44,10 +44,10 @@ const Navbar = () => {
           </Link>
 
           <Link
-            to="/blog"
+            to="/dashboard"
             className="text-gray-700 hover:text-green-500 relative pb-1 border-b-2 border-transparent hover:border-green-500 transition duration-300"
           >
-            BLOG
+            DASHBOARD
           </Link>
 
           <Link
@@ -140,10 +140,10 @@ const Navbar = () => {
             ABOUT
           </Link>
           <Link
-            to="/blog"
+            to="/dashboard"
             className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
           >
-            BLOG
+            DASHBOARD
           </Link>
           <Link
             to="/team"
