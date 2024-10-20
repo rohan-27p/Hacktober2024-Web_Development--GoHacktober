@@ -9,9 +9,8 @@ import Navbar from './Navbar';
 const Repopage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar /><br></br><br />
       <div className="flex flex-col items-center justify-center h-screen p-4">
-        <h1 className="text-4xl font-bold mb-10 uppercase">REPOSITORIES</h1>
         <div className="flex space-x-4">
           <div className="flex flex-col items-center justify-center min-h-screen p-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-10 uppercase text-center">
