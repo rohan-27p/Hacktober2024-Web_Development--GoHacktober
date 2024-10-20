@@ -1,3 +1,18 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Homelogo from '../assets/Homelogo.png';
+import Navbar from './Navbar';
+
+const Landingpage = () => {
+  return (
+    <div>
+      <Navbar></Navbar>
+    <div className="flex flex-col items-center justify-center h-screen bg-white text-center p-4 mt-[-10]"> {/* Adjusted margin-top here */}
+     
+      <h1 className="font-bold text-3xl md:text-4xl mb-2">
+        Together, let's push the boundaries 
+
 import React from "react";
 import { Link } from "react-router-dom";
 import Homelogo from "../assets/Homelogo.png";
@@ -8,6 +23,7 @@ const Landingpage = () => {
       {/* Title section */}
       <h1 className="font-bold text-4xl  mb-2 mt-20 lg:mt-0 lg:mb-4">
         Together, let's push the boundaries
+
       </h1>
       <h1 className="font-bold text-4xl mb-12 lg:mb-6">
         of what's possible in open source!
@@ -26,6 +42,7 @@ const Landingpage = () => {
         alt="Home Logo"
         className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-lg h-auto mt-4"
       />
+    </div>
     </div>
   );
 };
