@@ -34,6 +34,7 @@ const styles = {
   container: {
     maxWidth: '800px',
     margin: '0 auto',
+    marginTop:'50px',
     padding: '20px',
     textAlign: 'center',
     borderRadius: '8px',

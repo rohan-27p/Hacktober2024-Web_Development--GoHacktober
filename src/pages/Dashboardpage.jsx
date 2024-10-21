@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
-import LinearProgress, {
-  linearProgressClasses,
-} from "@mui/material/LinearProgress";
-import { styled } from "@mui/material/styles";
 import pr from '../assets/pr.png'
 import star from '../assets/Star.png'
 import issue from '../assets/issue.png'
+import { styled } from "@mui/material/styles";
 import dev from '../assets/dev.png'
 import { BarChart } from "@mui/x-charts/BarChart";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
 import StatCard from "../components/StatCard";
+import Hero from '../components/Hero';
 
 const dataset = [
   { day: "Mon", seoul: 3 },
@@ -23,19 +21,6 @@ const dataset = [
 ];
 
 const valueFormatter = (value) => `${value} contributions`;
-
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 15,
-  borderRadius: 10,
-  width: "100%",
-  [`&.${linearProgressClasses.colorPrimary}`]: {
-    backgroundColor: "#1717173d", 
-  },
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    backgroundColor: "#171717", 
-  },
-}));
 
 
 
@@ -57,28 +42,11 @@ const chartSetting = {
   sx: {
     [`& .${axisClasses.directionY} .${axisClasses.label}`]: {
         transform: "translateX(-10px)",
-        fill:"#ffffff"
     },   
     [`& .${axisClasses.directionX} .${axisClasses.label}`]: {
       transform: "translateX(-10px)",
-      fill:"#ffffff"
     },   
 
-    "& .MuiChartsAxis-tickContainer .MuiChartsAxis-tickLabel":{
-        fill:"white",
-    },
-    "& .css-1x2wln8-MuiChartsAxis-root-MuiChartsXAxis-root .MuiChartsAxis-line":{
-      stroke:"white"
-    },
-    "& .css-1x2wln8-MuiChartsAxis-root-MuiChartsXAxis-root .MuiChartsAxis-tickContainer line":{
-      stroke:"white" 
-    }, 
-    "& .css-175e1i1-MuiChartsAxis-root-MuiChartsYAxis-root .MuiChartsAxis-line":{
-      stroke:"white"
-    },   
-    "& .css-175e1i1-MuiChartsAxis-root-MuiChartsYAxis-root .MuiChartsAxis-tickContainer line":{
-      stroke:"white" 
-    }, 
   },
 };
 
@@ -88,13 +56,6 @@ const DashboardPage = () => {
   const [error, setError] = useState(null);
 
   // Simulated backend JSON data
-
-  useEffect(() => {
-    document.body.style.background = "linear-gradient(to bottom, #7E22CE, #5B21B6, #312E81)";
-    return () => {
-      document.body.style.background = ""; 
-    };
-  }, []);
 
   const backendData = [
     {
@@ -159,7 +120,7 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className=" text-white min-h-screen">
+    <div className=" text-black min-h-screen">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
           <h1 className="text-2xl sm:text-3xl mb-4 sm:mb-0">
@@ -168,18 +129,7 @@ const DashboardPage = () => {
           <Avatar src="/broken-image.jpg" />
         </div>
 
-        <div className="bg-white bg-opacity-10 shadow-md rounded-md p-4 mb-8">
-          <h2 className="text-xl sm:text-2xl text-center mb-4">
-            Welcome back Abiral Jain
-          </h2>
-          <div className="space-y-4">
-            <h4 className="text-sm sm:text-base">
-              Your Hacktoberfest Progress
-            </h4>
-            <BorderLinearProgress variant="determinate" value={90} />
-            <span className="block text-right text-sm">90% completed</span>
-          </div>
-        </div>
+        <Hero username={'User'} pr={3} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {
@@ -212,7 +162,7 @@ const DashboardPage = () => {
 
 
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="w-full lg:w-1/2 bg-white bg-opacity-10  text-white  shadow-md  rounded-lg p-4">
+          <div className="w-full lg:w-1/2 bg-white bg-opacity-10  text-black  shadow-md  rounded-lg p-4">
             <BarChart
               dataset={dataset}
               xAxis={[
