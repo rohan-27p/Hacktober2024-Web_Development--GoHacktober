@@ -1,4 +1,4 @@
-// improvised and more interactive navbar with hover effects d,rop down and smoother effects
+// improvised and more interactive navbar with hover effects drop down and smoother effects
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
